@@ -1,0 +1,42 @@
+.card {
+    background-color: #fff;
+    width: fit-content;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card__header {
+    margin-bottom: 1rem;
+}
+
+.card__header h2,
+.card__header p {
+    margin: 0;
+    padding: 0;
+}
+
+.card__header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card__header p {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.card__assigned {
+    display: flex;
+    align-items: center;
+}
+
+.card__assigned img {
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.card__assigned__info {
+    display: inline;
+}
