@@ -5,6 +5,12 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.card__top {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
 .card__tag {
     width: fit-content;
     padding: 0.5rem 0.8rem 0.4rem;
@@ -54,4 +60,25 @@
 
 .card__assigned__info {
     display: inline;
+}
+
+.card__date {
+    display: flex;
+    margin-left: 0.5rem;
+    opacity: 0.2;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.card__date svg {
+    padding-bottom: 5px;
+}
+
+.card__date p {
+    margin: 0;
+    padding: 0;
+    margin-left: 0.4rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
