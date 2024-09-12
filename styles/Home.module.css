@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+.home {
+    display: flex;
+    font-family: "Overpass", sans-serif !important;
+}
+
+.home__form {
+    padding: 1rem 2rem;
+    max-width: 300px;
+}
+
+.form__submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.form__submit input {
+    border: none;
+    padding: 0.5rem 3rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    font-family: "Overpass", sans-serif !important;
+}
+
+.form__submit input:hover {
+    background-color: rgb(133, 133, 133);
+    cursor: pointer;
+}
+
+.home__form input:not(input[type=submit]),
+.home__form textarea,
+.home__form select {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    background-color: #E5E4E2;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    font-family: "Overpass", sans-serif !important;
+}
+
+.home__form input:not(input[type=submit]):not(input[type=date]),
+.home__form textarea {
+    width: 100%;
+}
+
+.home__form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.form__element,
+.form__group {
+    margin-bottom: 0.5rem;
+    width: inherit;
+}
+
+.form__group {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 32px);
+}
+
+.form__element label {
+    margin-bottom: 5rem;
+}
+
+.home__separator {
+    height: 364px*2;
+    background-color: #D3D3D3;
+    width: 1px;
+    margin: 0rem 10rem;
+}
+
+.home__result {
+    height: 364px*2;
+    display: flex;
+    align-items: center;
+}
