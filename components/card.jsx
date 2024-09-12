@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function Card({ tag = "", title = "", description = "", pfp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", assigned = "", start = undefined, end = undefined }) {    
     function calculateTimeLeft() {
         let diff = (end - start) / 1000
-        if (diff === NaN) return "N/A"
         
         if (diff < 60) {
             return `${diff} seconds`;
@@ -35,7 +34,7 @@ function Card({ tag = "", title = "", description = "", pfp = "https://cdn.pixab
                     {tag}
                 </div>
 
-                {start && end ? <div className={styles.card__date}>
+                {(start && end) && ((end - start) > 0) ? <div className={styles.card__date}>
                     <FontAwesomeIcon icon={faCalendar} />
                     <p>Expires in {calculateTimeLeft()}</p>
                 </div> : null}
