@@ -5,6 +5,7 @@ import Card from '@/components/card'
 
 function Home() {
     const [cardInfo, setCardInfo] = useState({tag: "", title: "", description: "", assigned: "", start: undefined, end: undefined })
+    const [savedCards, setSavedCards] = useState([])
     const placeholderInfo = {tag: "TAG", title: "Insert Title Here", description: "Description", assigned: "John Doe"}
     const today = new Date().toISOString().split('T')[0]
 
@@ -37,6 +38,16 @@ function Home() {
         setCardInfo(prev => ({
             ...prev, end: new Date(e)
         }))
+    }
+
+    const handleTaskSave = () => {
+        if (cardInfo.tag == "" || cardInfo.title == "" || cardInfo.description == "" || cardInfo.assigned == "" || cardInfo.start == undefined || cardInfo.end == undefined) {
+            alert("Please fill in all the fields")
+            return
+        }
+
+        setSavedCards(prev => [cardInfo, ...prev])
+        setCardInfo({tag: "", title: "", description: "", assigned: "", start: undefined, end: undefined})
     }
 
     return (
@@ -82,7 +93,7 @@ function Home() {
                     </div>
 
                     <div className={styles.form__submit}>
-                        <input type='submit' value="Save" />
+                        <input type='submit' value="Save" onClick={handleTaskSave} />
                     </div>
                 </form>
 
@@ -90,6 +101,12 @@ function Home() {
 
                 <div className={styles.home__result}>
                     <Card tag={cardInfo.tag == "" ? placeholderInfo.tag : cardInfo.tag.toUpperCase()} title={cardInfo.title == "" ? placeholderInfo.title : cardInfo.title} description={cardInfo.description == "" ? placeholderInfo.description : cardInfo.description} assigned={cardInfo.assigned == "" ? placeholderInfo.assigned : cardInfo.assigned} start={cardInfo.start} end={cardInfo.end} />
+                
+                    <div className={styles.home__result__saved}>
+                        { savedCards.map((card, index) => (
+                            <Card key={index} tag={card.tag.toUpperCase()} title={card.title} description={card.description} assigned={card.assigned} start={card.start} end={card.end} />
+                        )) }
+                    </div>
                 </div>
             </div>
         </>

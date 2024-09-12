@@ -79,3 +79,14 @@
     display: flex;
     align-items: center;
 }
+
+.home__result__saved {
+    display: flex;
+    margin-left: 5rem;
+    opacity: 0.5;
+    overflow-x: auto;
+}
+
+.home__result__saved > *:not(:last-child) {
+    margin-right: 1rem;
+}
