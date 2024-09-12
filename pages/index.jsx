@@ -48,6 +48,10 @@ function Home() {
 
         setSavedCards(prev => [cardInfo, ...prev])
         setCardInfo({tag: "", title: "", description: "", assigned: "", start: undefined, end: undefined})
+
+        document.getElementById('start').value = ''
+        document.getElementById('end').value = ''
+
     }
 
     return (
