@@ -40,7 +40,9 @@ function Home() {
         }))
     }
 
-    const handleTaskSave = () => {
+    const handleTaskSave = (e) => {
+        e.preventDefault()
+
         if (cardInfo.tag == "" || cardInfo.title == "" || cardInfo.description == "" || cardInfo.assigned == "" || cardInfo.start == undefined || cardInfo.end == undefined) {
             alert("Please fill in all the fields")
             return
